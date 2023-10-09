@@ -1,7 +1,7 @@
 # SRI-ASIR2
 Tabla de actividades
 
-| Tema 0  | 
+| Tema 0  | |
 | ------------- | ------------- |
 | [Ejercicio 1](/tema0/ejercicio1)  | Simple web server  |
 | [Ejercicio 2](/tema0/ejercicio2)  | http server  |
