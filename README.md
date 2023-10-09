@@ -1,8 +1,9 @@
 # SRI-ASIR2
-Repositorio de SRI
+Tabla de actividades
 
-| Tabla 1  | Tabla 2 |
+| Tema 0  | 
 | ------------- | ------------- |
-| [Ejercicio 1]()  | Cerditos  |
-| [Ejercicio 2]()  | Por el poder del cabello nasal  |
+| [Ejercicio 1](/tema0/ejercicio1)  | Simple web server  |
+| [Ejercicio 2](/tema0/ejercicio2)  | http server  |
+| [Ejercicio 3](/tema0/ejercicio3)  | dummy web server  |
 
