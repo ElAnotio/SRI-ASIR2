@@ -28,7 +28,7 @@ Ahora, crearemos una cuenta de usuario MySQL para operar en la nueva base de dat
 
 Para usar los dominios requeridos por la práctica, nos debemos ir al archivo hosts que se encuentra en la carpeta /etc, mediamente el comando nano /etc/hosts vamos a editar el documento para añadir los 2 dominios:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/6fc3290c-77bb-4a88-b317-f2a7de781ca0)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/94a7548c-244e-4df8-a41b-6c76825e8353)
 
 **Paso 3: Instalar Wordpress**
 
