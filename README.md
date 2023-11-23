@@ -5,5 +5,5 @@ Tabla de actividades
 | ------------- | ------------- |
 | [Ejercicio 1](Tema0/Ejercicio1)  | Intalación de Apache |
 | [Ejercicio 2](Tema0/Ejercicio2)  | Scripts  |
-| [Proyecto](Tema0/Proyecto)  | Proyecto 1º Trimestre  |
+| [Proyecto](Tema0/Proyecto.md)  | Proyecto 1º Trimestre  |
 
