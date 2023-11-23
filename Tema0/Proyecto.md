@@ -129,6 +129,44 @@ Dentro de este directorio, vamos a dividir su arquitectura en dos partes:
 
 2- Destinada a servir la aplicación (directorio público servido) en el cuál solo almacenaremos archivos estáticos.
 
+**mkdir /home/yo/curso-python/trunk/python-web/mypythonapp**
+**mkdir /home/yo/curso-python/trunk/python-web/public_html**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3c1c9733-931c-40c9-a289-1aabc90ff46d)
+
+Dentro de nuestro directorio mypythonapp, almacenaremos entonces, todos los módulos y paquetes de nuestra aplicación Python, mientras que en public_html, estarán todos los archivos estáticos y será el único directorio al que se pueda acceder mediante el navegador Web.
+
+Aprovecharemos este paso, para crear una carpeta, destinada a almacenar los logs de errores y accesos a nuestra Web App:
+
+**mkdir /home/linux/curso-python/trunk/python-web/logs**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/07dacd85-b48a-4972-b228-465cb686bea2)
+
+**Crear un controlador para la aplicación:**
+Todas las peticiones realizadas por el usuario (es decir, las URI a las cuáles el usuario acceda por el navegador), serán manejadas por un único archivo, que estará almacenado en nuestro directorio mypythonapp.
+
+**echo '# -*- coding: utf-8 -*-' > mypythonapp/controller.py**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0789fad5-4267-40d5-a1ed-1e74e9cb8b83)
+
+Ahora, editaremos el archivo creado .py con la siguiente información:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/83608d0f-e2a3-4dbb-a1fc-64cd7d17b5f4)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9e654339-d22a-4da2-9939-d1f6b67d00a3)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
