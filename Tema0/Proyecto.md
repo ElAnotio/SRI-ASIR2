@@ -155,14 +155,28 @@ Ahora, editaremos el archivo creado .py con la siguiente información:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9e654339-d22a-4da2-9939-d1f6b67d00a3)
 
+**Configurar el VirtualHost:**
 
+Mientras que el DocumentRoot de nuestro sitio Web, será la carpeta pública, public_html, una variable del VirtualHost, será la encargada de redirigir todas las peticiones públicas del usuario, hacia nuestro front controller.
 
+**sudo nano /etc/apache2/sites-available/python-web**
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/40d9f913-ac05-4af9-978c-84b10faef50f)
 
+Una vez configurado nuestro VirtualHost, habilitamos el sitio web: 
+**sudo a2ensite python-web**
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9e415df9-ba40-4735-ad43-d9a38e629fe8)
 
+Recargamos Apache:
+**sudo service apache2 reload**
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/98a88e7b-b4d3-4c7d-9792-8637139c361d)
 
+Habilitamos el sitio en nuestro host:
+**sudo nano /etc/hosts** y allí agregamos la siguiente línea: 192.168.201.9 python-web
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/6f1de92f-eed2-4335-a3a8-d0bb4907a01a)
 
 
 
