@@ -111,15 +111,23 @@ Una vez instalado, procederemos a poder editar nuestra pagina:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8ddfde10-adf5-4e30-9d8b-c7a23b6c1340)
 
+**Paso 4: Python bajo Apache**
 
+Para habilitar mod_wsgi en Apache, basta con instalar el paquete libapache2-mod-wsgi-py3:
+**sudo apt-get install libapache2-mod-wsgi-py3**
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/bc8afa70-3629-4058-97dc-c9904683f17e)
 
+Crear la estructura de directorios para nuestra aplicación
+**mkdir /home/linux/curso-python/trunk/python-web**
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0cebe20d-4d90-4b4b-9514-aafd303e6a16)
 
+Dentro de este directorio, vamos a dividir su arquitectura en dos partes:
 
+1- Destinada al almacenaje de nuestra aplicación Python pura (será un directorio privado, no servido).
 
-
-
+2- Destinada a servir la aplicación (directorio público servido) en el cuál solo almacenaremos archivos estáticos.
 
 
 
