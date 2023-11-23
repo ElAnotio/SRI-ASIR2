@@ -1,7 +1,7 @@
 # SRI-ASIR2
 Tabla de actividades
 
-| Tema 1  | |
+| Primer Timestre  | |
 | ------------- | ------------- |
 | [Ejercicio 1](Tema0/Ejercicio1)  | Intalación de Apache |
 | [Ejercicio 2](Tema0/Ejercicio2)  | Scripts  |
