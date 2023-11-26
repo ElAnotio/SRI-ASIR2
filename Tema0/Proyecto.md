@@ -333,7 +333,7 @@ A continuación, ejecutaremos el comando para actualizar el archivo:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/1129383e-b009-4c76-8236-c2412062e8c1)
 
-Una vez ejecutado, si ponemos en nuestra dirección, el /awsats saldrá:
+Una vez ejecutado, si ponemos: http://departamentos.centro.intranet/awstats/awstats.pl?config=departamentos.centro.intranet.net
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/34d8c636-5817-49bf-868a-53cb2d33f492)
 
