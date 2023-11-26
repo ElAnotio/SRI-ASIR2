@@ -237,7 +237,7 @@ Se le solicitará proporcionar y confirmar una contraseña para el usuario:
 Abra el archivo host virtual al que quiera añadir una restricción con un editor de texto como nano:
 
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c31ee81f-edee-470e-9ab4-10eea6472dbf)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/23a61c6d-f412-4ec4-a549-b24699dd61e2)
 
 En este paso, añada las siguientes líneas:
 
@@ -247,13 +247,11 @@ En este paso, añada las siguientes líneas:
       Require valid-user
 
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/52c36923-9833-46d2-a26f-401d4e45e7e6)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a7d2df3b-d11b-409b-afd1-8d54aa216099)
 
 Si actualizas, te saldrá el login en python:
 
-
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/88fe0a61-a11f-4f0f-b9c3-8a5fb2e36f93)
-
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9ea71033-7133-4f86-8060-ef2d154ce204)
 
 ## **Paso 5: Instalar e implementar Awstat:**
 
@@ -296,6 +294,7 @@ Alias /awstatsclasses/ /usr/share/java/awstats/
 Una vez escrito las directivas del archivo, utilizaremos dos comandos para habilitar la configuración:
 
 **sudo a2enmod cgi**
+
 **sudo a2enconf awstats** 
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a6c1568a-c8f9-480a-9393-3ef011457cd2)
@@ -306,35 +305,38 @@ Y acto seguido recargamos apache2:
 
 Siguiendo con los pasos:
 
-**sudo cp /etc/awstats/awstats.conf /etc/awstats/awstats.python-web.conf**
-**sudo nano /etc/awstats/awstats.python-web.conf** 
+**sudo cp /etc/awstats/awstats.conf /etc/awstats/awstats.departamento-centro-intranet.conf**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/03839371-0af4-49d6-bc9e-21cb3aa04da1)
+**sudo nano /etc/awstats/awstats.departamento-centro-intranet.conf** 
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/7f48a59e-4fd5-4d80-98b9-e265bd71a0cf)
 
 Dentro de ese archivo, editaremos las siguientes variables:
 	
-LogFile="/var/www/curso-python/trunk/python-web/log/access.log"
+LogFile="/var/www/departamentos.centro.intranet/trunk/python-web/log/access.log"
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9c1c87fd-77a3-424a-bad5-720538cce612)
-
-SiteDomain="python-web"
-
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0934e64b-98dd-4c76-b9f4-69f5340e2574)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/40c9ae31-46ce-4af8-9847-2a3a141b01e8)
 
 
-HostAliases="python-web localhost 127.0.0.1"
+SiteDomain="departamentos.centro.intranet"
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/bb25d365-aea1-4b0b-88b0-ad838092fb66)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/6f0735db-9c50-47a8-9f82-8adce58d3e2b)
+
+HostAliases="departamentos.centro.intranet localhost 127.0.1.1"
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8fa6b90f-2aa1-407e-836c-ddcdc0a219e5)
+
 
 A continuación, ejecutaremos el comando para actualizar el archivo:
 
 **sudo /usr/lib/cgi-bin/awstats.pl -config=python-web -update**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a46e86ec-d4bd-4774-bc07-15ad9600bf89)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/1129383e-b009-4c76-8236-c2412062e8c1)
 
 Una vez ejecutado, si ponemos en nuestra dirección, el /awsats saldrá:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0b8d7b25-0b6b-488f-978b-29c4bd699f56)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/34d8c636-5817-49bf-868a-53cb2d33f492)
+
 
 
 
