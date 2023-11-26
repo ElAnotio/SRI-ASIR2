@@ -164,39 +164,41 @@ Dentro de este directorio, vamos a dividir su arquitectura en dos partes:
 
 2- Destinada a servir la aplicación (directorio público servido) en el cuál solo almacenaremos archivos estáticos.
 
-**mkdir /home/yo/curso-python/trunk/python-web/mypythonapp**
-**mkdir /home/yo/curso-python/trunk/python-web/public_html**
+**mkdir /var/www/departamentos.centro.intranet/trunk/python-web/mypythonapp**
+**mkdir /var/www/departametos.centro.intranet/trunk/python-web/public_html**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3c1c9733-931c-40c9-a289-1aabc90ff46d)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c59eb5d0-89eb-4a4d-99dd-78b33303a53f)
+
 
 Dentro de nuestro directorio mypythonapp, almacenaremos entonces, todos los módulos y paquetes de nuestra aplicación Python, mientras que en public_html, estarán todos los archivos estáticos y será el único directorio al que se pueda acceder mediante el navegador Web.
 
 Aprovecharemos este paso, para crear una carpeta, destinada a almacenar los logs de errores y accesos a nuestra Web App:
 
-**mkdir /home/linux/curso-python/trunk/python-web/logs**
+**mkdir /var/www/departamentos.centro.intranet/trunk/python-web/logs**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/07dacd85-b48a-4972-b228-465cb686bea2)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/ef639ee6-acdc-43af-ac11-3dad9b6876d0)
+
 
 **Crear un controlador para la aplicación:**
 Todas las peticiones realizadas por el usuario (es decir, las URI a las cuáles el usuario acceda por el navegador), serán manejadas por un único archivo, que estará almacenado en nuestro directorio mypythonapp.
 
 **echo '# -*- coding: utf-8 -*-' > mypythonapp/controller.py**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0789fad5-4267-40d5-a1ed-1e74e9cb8b83)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9c24d096-eb9e-4637-aef7-ac27d85da6d8)
 
 Ahora, editaremos el archivo creado .py con la siguiente información:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/83608d0f-e2a3-4dbb-a1fc-64cd7d17b5f4)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3e5338bd-4e71-4cc8-8662-ec4657dda08d)
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9e654339-d22a-4da2-9939-d1f6b67d00a3)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/30a2e073-bd39-444f-b36c-f6a2d90c23e1)
 
 **Configurar el VirtualHost:**
 
 Mientras que el DocumentRoot de nuestro sitio Web, será la carpeta pública, public_html, una variable del VirtualHost, será la encargada de redirigir todas las peticiones públicas del usuario, hacia nuestro front controller.
 
-**sudo nano /etc/apache2/sites-available/python-web**
+**sudo nano /etc/apache2/sites-available/departamentos.centro.intranet.conf**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/40d9f913-ac05-4af9-978c-84b10faef50f)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/2b36bce3-9f40-4606-9ff4-0da29a7ad47b)
 
 Una vez configurado nuestro VirtualHost, habilitamos el sitio web: 
 **sudo a2ensite python-web**
@@ -211,11 +213,11 @@ Recargamos Apache:
 Habilitamos el sitio en nuestro host:
 **sudo nano /etc/hosts** y allí agregamos la siguiente línea: 127.0.0.1 python-web
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/54fa599a-5bcb-4a45-93da-34ed4c6dddfd)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0b2106e3-e265-428d-b9ef-5531cf359e87)
 
 Ahora, para comprobar que funcione, insertamos en la url la dirección puesta, o el nombre de dominio que le hemos asignado:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9601138a-1996-47dc-9a83-3182790affa1)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a305b6d0-fe7a-4fd0-8332-1eb2f1d3730d)
 
 ### **Paso 4: Proteger el acceso a python con una autenticación:**
 
