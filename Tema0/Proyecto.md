@@ -3,9 +3,10 @@
 
 ### **Paso 1: Instalación de Apache**
 
-Empezamos instalando el servicio Apache, en ejercicios anteriores ya se muestra como se instala, saltaremos todos estos pasos y subiré una captura con todo instalado:
+Empezamos instalando el servicio Apache, primero ded todo, para instalarlo, utilizamos el comando:
+**apt install apache2**
 
-![](imag_proyecto/1.png)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/1f4dc23a-b88c-4684-a2bf-53bab4b9504d)
 
 **También tenemos que instalar una base de datos para previamente subir al wordpress**
 Abre el terminal de MySQL escribiendo el siguiente comando:
@@ -24,28 +25,61 @@ Ahora, crearemos una cuenta de usuario MySQL para operar en la nueva base de dat
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/361f0cad-ded3-4970-a007-aef4810ad58e)
 
+**A continuación, tendremos que instalar PHP**
+
+**apt install php libapache2-mod-php php-mysql**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/2d2cd361-bc61-4327-a4b0-959cc65ab125)
+
 ### **Paso 2: Activar dominios**
 
-Para usar los dominios requeridos por la práctica, nos debemos ir al archivo hosts que se encuentra en la carpeta /etc, mediamente el comando nano /etc/hosts vamos a editar el documento para añadir los 2 dominios:
+Crearemos una carpeta con los nombres de nuestros dominios:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/94a7548c-244e-4df8-a41b-6c76825e8353)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8d5912fd-6d10-4e44-92ef-ae359c216993)
+
+A continuación, asigne la propiedad del directorio con la variable de entorno $USER, que hará referencia a su usuario de sistema actual:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8e1b665e-6905-4563-8305-bcf7711c6849)
+
+Luego, abra un nuevo archivo de configuración en el directorio sites-available de Apache usando el editor de línea de comandos que prefiera. En este caso, utilizaremos nano:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/ebe6db15-87df-422d-9b5f-ff6a6ccc705f)
+
+De esta manera, se creará un nuevo archivo en blanco. Pegue la siguiente configuración:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/35651e47-0431-4c3b-85a6-ca9ba0daa09f)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c6f7d1ab-274b-4f0a-92a0-a9b1986da684)
+
+Ahora, puede usar a2ensite para habilitar el nuevo host virtual:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/170c40c0-5a55-4289-8f71-fccf9b1d841a)
+
+Por último, vuelva a cargar Apache para que estos cambios surtan efecto:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a67237ba-bf64-4dc5-a605-78aa9bdfa76d)
+
 
 ### **Paso 3: Instalar Wordpress**
 
-A continuación, para instalar wordpress, empezaremos por crear un archivo de wordpress.conf, con el comando **nano /etc/apache2/sites-available/wordpress.conf**
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/46a327e7-450b-426d-a51e-424067573171)
+A continuación, para instalar wordpress, empezaremos por crear un archivo de wordpress.conf, con el comando **nano /etc/apache2/sites-available/centro-intranet.conf**
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/91108090-e914-41b4-86c8-48df8b97862e)
+
 
 Escribiremos el siguiente texto:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9017e531-2433-407f-b77e-a684815102cd)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/1bda2316-b9a9-48f4-955f-bdcfa1346fb6)
 
-Crearemos una carpeta con el comando **mkdir /var/www/wordpress**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/fb830386-516a-4c53-9445-b65cb31524ed)
+Crearemos una carpeta con el comando **mkdir /var/www/centro.intranet**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/f4f2472a-802d-4c14-9222-275533a554de)
+
 
 Ahora, activa el mod_rewrite para utilizar la función de permalink o enlace permanente de WordPress:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/13d3dc2e-3acd-4d5e-820f-b27f56ea3c41)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/b09f9c5b-18be-454f-96a2-5b30c06bf1fb)
+
 
 Tendremos que reiniciar el servidor web Apache utilizando el siguiente comando:
 
@@ -81,7 +115,8 @@ A continuación, navega hasta el directorio y descomprime el archivo utilizando 
 
 Después, utiliza el siguiente comando para mover el directorio:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/368720a7-9f8e-46b0-b766-cd40a9451b5a)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c0b8bf38-061f-4da1-9c81-71ceb7c431bf)
+
 
 El último paso es eliminar index.html. Utiliza el siguiente comando:
 
