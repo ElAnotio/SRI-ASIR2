@@ -337,8 +337,117 @@ Una vez ejecutado, si ponemos: http://departamentos.centro.intranet/awstats/awst
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/34d8c636-5817-49bf-868a-53cb2d33f492)
 
+### Segundo servidor (nginex)
 
+En mi caso, he decidido instalar nginex para esta practica y tener otro servidor con el dominio servidor2.centro.intranet:
 
+Para instalarlo, pondremos **apt install nginx**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/b6966805-a495-4197-b709-d04be156df42)
+
+Ahora editaremos el archivo para cambiarle el puerto:
+
+**nano /etc/nginx/sites-enabled/default**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/600ac18f-b1d0-41e4-9cea-393e3a88e215)
+
+Editaremos el archivo para que cambie el sitio a los puertos que te pide, en este caso 8080:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8fa1904c-18da-4a55-9410-5b9000b3832d)
+
+Si reiniciamos nginx y probamos con status, podremos ver que ya esta correcto:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/62cb487f-b519-4166-98b0-88a565471981)
+
+Para crear nuestro dominio para implementarlo, empezamos creando la carpeta:
+
+**mkdir -p /var/www/servidor2.centro.intranet/html**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/325e109d-1bda-40de-83a5-98f016c6fb74)
+
+A continuación, asignamos la propiedad del directorio con la variable de entorno $USER:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4e9f0ec5-a231-4795-ba24-25c29f7d4a1a)
+
+Para asegurarse de que sus permisos sean correctos:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/36e9f3df-6b14-4052-a0e5-51b685e49cc4)
+
+Crearemos un index dentro de la carpeta para el inicio:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8dfd376e-c587-44f3-ac5e-f7e49478e0e5)
+
+Ahora lo editaremos:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/07b95b14-2498-4e86-a601-af1e4634a2ac)
+
+Para que Nginx presente este contenido, es necesario crear un bloque de servidor con las directivas correctas:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/40f009de-6c5c-4ecb-ae61-8026935e8913)
+
+Lo editamos con las siguientes directivas:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4ad9bcb8-d4e8-449d-acd5-1e5c4a1c7705)
+
+A continuación, habilitaremos el archivo creando un enlace entre él y el directorio sites-enabled, en el cual Nginx obtiene lecturas durante el inicio:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/54da70b1-c491-4ee6-9d99-fb360fd7320a)
+
+Para evitar un problema de memoria de depósito de hash que pueda surgir al agregar nombres de servidor, es necesario aplicar ajustes a un valor en el archivo /etc/nginx/nginx.conf
+
+Encuentre la directiva server_names_hash_bucket_size y borre el símbolo # para eliminar el comentario de la línea
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/7e952107-d990-4694-932f-f8edec806ed1)
+
+Ahora editamos el archivo hosts para poner nuestro dominio:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4f60381a-57d9-4641-845e-648dd13f1a73)
+
+Una vez editado, nos pondra en la direccion y con el puerto 8080 nuestro nginx:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/44672776-b013-488b-81a8-ab3498f5041f)
+
+**instalar php**
+
+Para instalarlo, pondremos el comando: **apt install php-fpm php-mysql**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3f72fb7f-88d4-426b-81e2-289f1dbc8d37)
+
+Editamos unas lineas en nuestro archivo de configuración:
+
+**nano /etc/nginx/sites-available/your_domain**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/96940649-2a46-4171-9f5e-2bdb39e8c100)
+
+Y lo editaremos con lo siguiente:
+
+server {
+    listen 80;
+    server_name your_domain www.your_domain;
+    root /var/www/your_domain;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+}
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0a282d60-4b02-4b19-ad40-93ac1938e444)
+
+Para ver que funciona, crearemos un archivo en nuestro dominio:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c9c4bdca-8940-4149-b4c0-7a2acc33ff2e)
 
 
 
