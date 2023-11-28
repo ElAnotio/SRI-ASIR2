@@ -1,5 +1,5 @@
-# Proyecto 1º Trimestre
-## Pasos del proyecto
+# Proyecto 1º Trimestre: Servidores web
+## Vamos a instalar un servidor web interno para un instituto. Por: Antonio Rosado
 
 ### **Paso 1: Instalación de Apache**
 
