@@ -63,23 +63,20 @@ Por último, vuelva a cargar Apache para que estos cambios surtan efecto:
 ### **Paso 3: Instalar Wordpress**
 
 A continuación, para instalar wordpress, empezaremos por crear un archivo de wordpress.conf, con el comando **nano /etc/apache2/sites-available/centro-intranet.conf**
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/91108090-e914-41b4-86c8-48df8b97862e)
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/91108090-e914-41b4-86c8-48df8b97862e)
 
 Escribiremos el siguiente texto:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/1bda2316-b9a9-48f4-955f-bdcfa1346fb6)
 
-
 Crearemos una carpeta con el comando **mkdir /var/www/centro.intranet**
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/f4f2472a-802d-4c14-9222-275533a554de)
 
-
 Ahora, activa el mod_rewrite para utilizar la función de permalink o enlace permanente de WordPress:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/b09f9c5b-18be-454f-96a2-5b30c06bf1fb)
-
 
 Tendremos que reiniciar el servidor web Apache utilizando el siguiente comando:
 
@@ -116,7 +113,6 @@ A continuación, navega hasta el directorio y descomprime el archivo utilizando 
 Después, utiliza el siguiente comando para mover el directorio:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c0b8bf38-061f-4da1-9c81-71ceb7c431bf)
-
 
 El último paso es eliminar index.html. Utiliza el siguiente comando:
 
@@ -169,7 +165,6 @@ Dentro de este directorio, vamos a dividir su arquitectura en dos partes:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c59eb5d0-89eb-4a4d-99dd-78b33303a53f)
 
-
 Dentro de nuestro directorio mypythonapp, almacenaremos entonces, todos los módulos y paquetes de nuestra aplicación Python, mientras que en public_html, estarán todos los archivos estáticos y será el único directorio al que se pueda acceder mediante el navegador Web.
 
 Aprovecharemos este paso, para crear una carpeta, destinada a almacenar los logs de errores y accesos a nuestra Web App:
@@ -177,7 +172,6 @@ Aprovecharemos este paso, para crear una carpeta, destinada a almacenar los logs
 **mkdir /var/www/departamentos.centro.intranet/trunk/python-web/logs**
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/ef639ee6-acdc-43af-ac11-3dad9b6876d0)
-
 
 **Crear un controlador para la aplicación:**
 Todas las peticiones realizadas por el usuario (es decir, las URI a las cuáles el usuario acceda por el navegador), serán manejadas por un único archivo, que estará almacenado en nuestro directorio mypythonapp.
@@ -236,7 +230,6 @@ Se le solicitará proporcionar y confirmar una contraseña para el usuario:
 
 Abra el archivo host virtual al que quiera añadir una restricción con un editor de texto como nano:
 
-
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/23a61c6d-f412-4ec4-a549-b24699dd61e2)
 
 En este paso, añada las siguientes líneas:
@@ -245,7 +238,6 @@ En este paso, añada las siguientes líneas:
       AuthName "Restricted Content"
       AuthUserFile /etc/apache2/.htpasswd
       Require valid-user
-
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a7d2df3b-d11b-409b-afd1-8d54aa216099)
 
@@ -260,13 +252,11 @@ El comando de instalación sería:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/2dcf9ed4-eda1-4b81-8e69-5269e23bfcb0)
 
-
 Después creamos un archivo de configuración y editarlo:
 
 **nano /etc/apache2/conf-available/awstats.conf**
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/e246fbce-620e-4881-bd59-d775f689e50d)
-
 
 En la configuración, pondremos lo siguiente:
 
@@ -325,7 +315,6 @@ SiteDomain="departamentos.centro.intranet"
 HostAliases="departamentos.centro.intranet localhost 127.0.1.1"
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8fa6b90f-2aa1-407e-836c-ddcdc0a219e5)
-
 
 A continuación, ejecutaremos el comando para actualizar el archivo:
 
