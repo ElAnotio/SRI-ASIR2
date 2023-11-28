@@ -421,37 +421,45 @@ Editamos unas lineas en nuestro archivo de configuración:
 
 Y lo editaremos con lo siguiente:
 
-server {
-    listen 80;
-    server_name your_domain www.your_domain;
-    root /var/www/your_domain;
-
-    index index.html index.htm index.php;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-     }
-
-    location ~ /\.ht {
-        deny all;
-    }
-
-}
-
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0a282d60-4b02-4b19-ad40-93ac1938e444)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c3744702-6ddb-4c8e-9fc2-65c6f445e92c)
 
 Para ver que funciona, crearemos un archivo en nuestro dominio:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c9c4bdca-8940-4149-b4c0-7a2acc33ff2e)
 
+Y para confirmarlo, pondremos en nuestra ruta, el info.php que hemos creado y nos saldrá:
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3f6a2d72-013d-49cc-9120-16de2838ae8d)
 
+**Ahora instalaremos phpmyadmin**
 
+Utilizamos el comando **apt install phpyadmin**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/e1fc5078-94bc-471c-9385-3f073148e3e5)
+
+A continuación, no seleccionamos nada y le damos a aceptar:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/e465d78b-8b82-4fc3-810c-5fbe62b2ab2b)
+
+Cuando le demos a aceptar, en la siguiente ventana que nos aparezca, le damos a la opcion que si:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9aeca8c6-c555-49c7-93f8-17883e317d57)
+
+Ahora saldrá que tenemos que poner una contraseña:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/86ab87b4-f251-4040-8f3e-d8e5e3510018)
+
+Volvemos a poner la contraseña:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/abe0d3e9-396e-4717-b064-f94552b67fc2)
+
+Una vez instalado, tendremos que añadir index.php en el apartado:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8467d455-d394-4b80-88d0-354bb9d74f28)
+
+Una vez configurado, pondremos en nuestra direccion /phpmyadmin y debería salir la página:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/cea0d4a9-f06d-40d6-8532-5bcf69d48394)
 
 
 
