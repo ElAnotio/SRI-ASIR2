@@ -146,7 +146,7 @@ Una vez instalado, procederemos a poder editar nuestra pagina:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8ddfde10-adf5-4e30-9d8b-c7a23b6c1340)
 
-### **Paso 4: Python bajo Apache**
+## **Paso 4: Python bajo Apache**
 
 Para habilitar mod_wsgi en Apache, basta con instalar el paquete libapache2-mod-wsgi-py3:
 **sudo apt-get install libapache2-mod-wsgi-py3**
