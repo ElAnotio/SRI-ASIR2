@@ -6,6 +6,12 @@ Tabla de actividades
 | [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
 | [Ejercicio 2](Tema0/Ejercicio2.md)  | Scripts  |
 | [Proyecto](Tema0/Proyecto.md)  | Proyecto 1º Trimestre  |
+
+
+Actividades Extras 
+
+| Tabla de actividades  | |
+| ------------- | ------------- |
 | [Actividad 2](Tema0/Actividad2.md)  | Configuración Apache |
 | [Actividad 3](Tema0/Actividad3.md)  | Directivas Básicas  |
 | [Actividad 4](Tema0/Actividad4.md)  | Directivas Básicas 2  |
