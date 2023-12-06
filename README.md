@@ -1,12 +1,27 @@
 # SRI-ASIR2
-Tabla de actividades
+## Tabla de actividades
 
-| Primer Timestre  | |
+## Primer Trimestre
+
+| Tema 0  | Introducción |
 | ------------- | ------------- |
 | [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
-| [Ejercicio 2](Tema0/Ejercicio2.md)  | Scripts  |
-| [Proyecto](Tema0/Proyecto.md)  | Proyecto 1º Trimestre  |
+| [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
+| [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
 
+| Tema 1  | Apache |
+| ------------- | ------------- |
+| [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
+
+| Tema 2  | Scripts |
+| ------------- | ------------- |
+| [Ejercicio 1](Tema0/Ejercicio1.md)  | Script 1 |
+| [Ejercicio 2](Tema0/Ejercicio1.md)  | Script 2 |
+| [Ejercicio 3](Tema0/Ejercicio1.md)  | Script 3 |
+
+| Proyecto Final  | |
+| ------------- | ------------- |
+| [Proyecto](Tema0/Proyecto.md)  | Proyecto 1º Trimestre  |
 
 Actividades Extras 
 
