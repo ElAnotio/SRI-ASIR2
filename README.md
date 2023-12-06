@@ -11,7 +11,7 @@
 
 | Tema 1  | Apache |
 | ------------- | ------------- |
-| [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
+| [Ejercicio 1](Tema0/Ejercicio1.md)  | Instalación de Apache |
 
 | Tema 2  | Scripts |
 | ------------- | ------------- |
