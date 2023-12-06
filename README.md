@@ -1,5 +1,5 @@
 # SRI-ASIR2
-## Tabla de actividades
+## Tabla de actividades: Antonio Rosado
 
 ## Primer Trimestre
 
