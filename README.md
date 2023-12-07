@@ -15,9 +15,9 @@
 
 | Tema 2  | Scripts |
 | ------------- | ------------- |
-| [Ejercicio 1](Tema0/Ejercicio1.md)  | Script 1 |
-| [Ejercicio 2](Tema0/Ejercicio1.md)  | Script 2 |
-| [Ejercicio 3](Tema0/Ejercicio1.md)  | Script 3 |
+| [Ejercicio 1](Tema0/script1.md)  | Script 1 |
+| [Ejercicio 2](Tema0/scrip2.md)  | Script 2 |
+| [Ejercicio 3](Tema0/script3.md)  | Script 3 |
 
 | Proyecto Final  | |
 | ------------- | ------------- |
