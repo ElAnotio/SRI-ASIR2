@@ -5,9 +5,9 @@
 
 | Tema 0  | Introducción |
 | ------------- | ------------- |
-| [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
-| [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
-| [Ejercicio 1](Tema0/Ejercicio1.md)  | Intalación de Apache |
+| [Ejemplo 1](Tema0/Ejemplo1.md)  | Simple web server |
+| [Ejemplo 2](Tema0/Ejemplo2.md)  | http server |
+| [Ejemplo 3](Tema0/Ejemplo3.md)  | dummy web server |
 
 | Tema 1  | Apache |
 | ------------- | ------------- |
