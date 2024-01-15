@@ -36,3 +36,14 @@ Actividades Extras
 | [Actividad 8](Tema0/Actividad8.md)  | VirtualHost  |
 | [Actividad 9](Tema0/Actividad9.md)  | Authentication  |
 
+
+## Segundo Trimestre
+
+Actividades Extras 
+
+| Tabla de actividades  | |
+| ------------- | ------------- |
+| [Actividad 1](Tema0/Actividad2.md)  |  Introducción |
+| [Actividad 2](Tema0/Actividad3.md)  | Introducción II  |
+| [Actividad 3](Tema0/Actividad4.md)  | nslookup  |
+
