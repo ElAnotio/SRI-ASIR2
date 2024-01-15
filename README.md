@@ -43,7 +43,7 @@ Actividades Extras
 
 | Tabla de actividades  | |
 | ------------- | ------------- |
-| [Actividad 1](Tema0/Actividad2.md)  |  Introducción |
-| [Actividad 2](Tema0/Actividad3.md)  | Introducción II  |
-| [Actividad 3](Tema0/Actividad4.md)  | nslookup  |
+| [Actividad 1](Segundo_Tri/actividad1.md)  |  Introducción |
+| [Actividad 2](Segundo_Tri/actividad2.md)  | Introducción II  |
+| [Actividad 3](Segundo_Tri/actividad3.md)  | nslookup  |
 
