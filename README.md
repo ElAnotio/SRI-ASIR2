@@ -49,5 +49,5 @@ Actividades Extras
 
 | Proyecto Final  | |
 | ------------- | ------------- |
-| [Proyecto](segundo_tri/proyecto_final.md)  | Proyecto 2º Trimestre  |
+| [Proyecto](Segundo_tri/proyecto_final.md)  | Proyecto 2º Trimestre  |
 
