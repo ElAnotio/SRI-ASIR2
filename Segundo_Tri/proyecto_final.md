@@ -73,7 +73,7 @@ Si accedemos a phpmyadmin con los siguientes datos, debemos acceder:
 Para crear el script, usaremos el sudo nano y crearemos un **script.sh**
 
 Utilizaremos el siguiente contenido:
-
+```
 #!/bin/bash
 
 # Datos requeridos
@@ -132,19 +132,19 @@ imap.$subdominio. IN CNAME $subdominio.
 
 sudo systemctl restart bind9
 
-# Crear base de datos y usuario MySQL
+### Crear base de datos y usuario MySQL
 sudo mysql -e "CREATE DATABASE $base_datos;"
 sudo mysql -e "CREATE USER '$usuario_mysql'@'localhost' IDENTIFIED BY 'password';"
 sudo mysql -e "GRANT ALL PRIVILEGES ON $base_datos.* TO '$usuario_mysql'@'localhost';"
 sudo mysql -e "FLUSH PRIVILEGES;"
 
-# Habilitar la ejecución de aplicaciones Python con el servidor web
+### Habilitar la ejecución de aplicaciones Python con el servidor web
 sudo apt install libapache2-mod-wsgi-py3
 sudo a2enmod wsgi
 sudo systemctl restart apache2
 
 echo "Script completado."
-
+```
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/fb7e0074-fb9d-4667-bf8b-559ae72b4dd3)
 
