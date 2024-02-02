@@ -47,3 +47,7 @@ Actividades Extras
 | [Actividad 2](Segundo_Tri/actividad2.md)  | Introducción II  |
 | [Actividad 3](Segundo_Tri/actividad3.md)  | nslookup  |
 
+| Proyecto Final  | |
+| ------------- | ------------- |
+| [Proyecto](segundo_tri/proyecto_final.md)  | Proyecto 2º Trimestre  |
+
