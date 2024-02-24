@@ -64,3 +64,8 @@ Modifica el fichero de zona del DNS para que resuelva adecuadamente
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/14ba025b-f08d-4757-9b34-f55d37bae729)
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c4a334e8-ca23-4be1-83d5-d1267cd06bb6)
+
+### Comprobación  
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4bd6b6d0-31c9-47bb-b3b8-0ee7411e19e2)
+
