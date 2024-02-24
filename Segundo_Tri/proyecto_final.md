@@ -68,6 +68,24 @@ Si accedemos a phpmyadmin con los siguientes datos, debemos acceder:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/bd47a0a0-20ff-45a2-9af4-c5e2da0938e6)
 
+A continuación, instalaremos los siguientes servicios:
+
+**BIND9:**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3826ac43-7603-4ab5-af3f-50a46d2b49f5)
+
+**VSFTPD**:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0884909d-c075-4daf-a4c3-43b188181f5a)
+
+
+**POSTFIX, IMAP Y POP3:**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/da334e76-c194-4a49-a24b-cc6e3bb61ca9)
+
+Terminaremos de configurarlo seleccionando en la panatalla 
+
+
 ## Paso 2: Creacion del script
 
 Para crear el script, usaremos el sudo nano y crearemos un **script.sh**
