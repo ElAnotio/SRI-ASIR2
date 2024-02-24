@@ -43,9 +43,9 @@ Actividades Extras
 
 | Tabla de actividades  | |
 | ------------- | ------------- |
-| [Actividad 1](Segundo_Tri/actividad1.md)  |  Introducción |
-| [Actividad 2](Segundo_Tri/actividad2.md)  | Introducción II  |
-| [Actividad 3](Segundo_Tri/actividad3.md)  | nslookup  |
+| [Actividad 4](Segundo_Tri/actividad1.md)  |  ProFTPd privado y anonimo |
+| [Actividad 5](Segundo_Tri/actividad2.md)  | ProFTPd VirtualHost  |
+| [Actividad 6](Segundo_Tri/actividad3.md)  | ProFTPd TLS  |
 
 | Proyecto Final  | |
 | ------------- | ------------- |
