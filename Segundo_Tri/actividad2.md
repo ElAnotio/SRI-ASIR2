@@ -1,54 +1,32 @@
-## Actividad 2:
+## Actividad 5: ProFTPd - Virtual Host
+
+### Actividad 1: 
+
+Crea un directorio para el usuario virtual “informatica” en /home/ftp/informatica
+
+**sudo mkdir /home/ftp/informatica**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/cacc0513-f2c3-4cf9-a9d0-0b3b3fb03863)
+
+### Actividad 2:
+
+Cambia el propietario del directorio creado anteriormente mediante “chown” al usuario ftp
+
+**sudo chown ftp:ftp /home/ftp/informatica**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a2303550-b2e6-47a1-b02a-810480009303)
 
 
-Hay varias configuraciones de servidores DNS, cada una con sus propias ventajas e inconvenientes, dependiendo de las necesidades y requisitos específicos de la red. Aquí hay algunas configuraciones comunes y sus características:
+### Actividad 3:
 
-1. Configuración de Servidor DNS Independiente:
+Crea un usuario virtual “informatica” mediante “ftpasswd”
 
-Ventajas:
-Sencillez: Fácil de configurar y mantener.
-Control total: Permite un control total sobre la configuración del servidor DNS.
-Inconvenientes:
-Puede no ser escalable para grandes redes.
-Si el servidor falla, puede haber tiempos de inactividad.
+**sudo ftpasswd --passwd --file=/etc/proftpd/ftpd.passwd --name=informatica --uid=1001 --gid=1001 --home=/home/ftp/informatica --shell=/bin/false**
 
-2.Configuración de Servidor DNS Maestro y Esclavo (Master-Slave):
+### Actividad 4:
+Haz los cambios necesarios en el fichero de configuración de proftpd
+### Actividad 5:
+Crea un sitio virtual para “informatica.marisma.local”
+### Actividad 6:
+Modifica el fichero de zona del DNS para que resuelva adecuadamente
 
-Ventajas:
-Mayor redundancia: El servidor esclavo replica la información del servidor maestro, proporcionando redundancia y tolerancia a fallos.
-Facilita las actualizaciones: Las actualizaciones se realizan en el servidor maestro y se replican automáticamente al servidor esclavo.
-Inconvenientes:
-Requiere configuración adicional para establecer la replicación.
-
-3.Configuración de Servidores DNS Caché y Autoritativo:
-
-Ventajas:
-Mejora el rendimiento: El servidor caché almacena consultas previas, reduciendo el tiempo de respuesta para consultas recurrentes.
-Mayor seguridad: El servidor autoritativo solo responde por las zonas que controla.
-Inconvenientes:
-Mayor complejidad en la configuración.
-
-4.Configuración de Servidores DNS de Búsqueda Inversa:
-
-Ventajas:
-Facilita la búsqueda inversa de direcciones IP.
-Importante para la resolución de nombres desde direcciones IP.
-Inconvenientes:
-Añade complejidad a la configuración.
-
-5.Configuración de Servidores DNS Anycast:
-
-Ventajas:
-Distribución geográfica: Permite la distribución de tráfico entre múltiples ubicaciones geográficas.
-Mayor disponibilidad: Al elegir la instancia Anycast más cercana, se mejora la disponibilidad y la velocidad de respuesta.
-Inconvenientes:
-Mayor complejidad de implementación y mantenimiento.
-
-6.Configuración de Servidores DNS Secundarios Distribuidos:
-
-Ventajas:
-Distribución geográfica: Proporciona redundancia y mejora la disponibilidad.
-Menos carga de tráfico en un solo servidor.
-Inconvenientes:
-Requiere una coordinación cuidadosa para garantizar la coherencia entre los servidores secundarios.
-Cada configuración tiene su lugar dependiendo de factores como la escala de la red, los requisitos de rendimiento, la redundancia necesaria y la complejidad aceptable. La elección dependerá de los objetivos específicos de la red y los recursos disponibles.
