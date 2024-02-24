@@ -42,6 +42,11 @@ Luego reinicia el servicio para aplicar los cambios:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4fc85255-124f-4495-adb3-9570abdf37ff)
 
+### Comprobación:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/07dd4152-e916-4aec-986d-d1c249d58948)
+
+
 
 
 
