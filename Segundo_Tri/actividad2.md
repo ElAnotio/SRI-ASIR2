@@ -59,3 +59,8 @@ sudo nano /etc/apache2/sites-available/informatica.marisma.local.conf
 ### Actividad 6:
 Modifica el fichero de zona del DNS para que resuelva adecuadamente
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4be4bf41-434a-43e4-9891-5225e5600add)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/14ba025b-f08d-4757-9b34-f55d37bae729)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c4a334e8-ca23-4be1-83d5-d1267cd06bb6)
