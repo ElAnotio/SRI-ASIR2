@@ -47,6 +47,14 @@ Haz los cambios necesarios en el fichero de configuración de proftpd
 
 Crea un sitio virtual para “informatica.marisma.local”
 
+```
+sudo nano /etc/apache2/sites-available/informatica.marisma.local.conf
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/2e846330-e0b7-4232-a567-6a13973bec4c)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/b3a83dae-1c40-423d-8e9e-4d94c0001651)
+
 
 ### Actividad 6:
 Modifica el fichero de zona del DNS para que resuelva adecuadamente
