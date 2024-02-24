@@ -38,6 +38,11 @@ Lo editaremos de la siguiente forma según dicta el ejercicio:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/766b8028-56ff-4acb-a656-c968229f7f5c)
 
+Luego reinicia el servicio para aplicar los cambios:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4fc85255-124f-4495-adb3-9570abdf37ff)
+
+
 
 
 
