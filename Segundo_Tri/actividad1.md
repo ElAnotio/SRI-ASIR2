@@ -1,22 +1,48 @@
-## Actividad 1:
+## Actividad 4: ProFTPd privado y anónimo
 
-**1- ¿Qué es TLD? ¿Cómo se clasifican los dominios de nivel superior?, Pon algunos ejemplos.** 
+##Actividades:
 
-TLD son las siglas de "Top-Level Domain" o "Dominio de Nivel Superior". Estos son los dominios de nivel más alto en la jerarquía del 
-sistema de nombres de dominio (DNS). Se dividen en dos categorías principales: los TLD genéricos (gTLD) y los TLD de código de país (ccTLD).
+1- Configura proftpd para que los usuarios accedan al directorio /home/ftp (puedes usar DefaultChdir). ¿Cual es la diferencia entre DefaultRoot y DefaultChdir?
 
-**2- ¿Qué es FQDN?, Pon algún ejemplo de FQDN**
+2- No se permitirá subir ni eliminar nada de la carpeta ftp
 
-FQDN son las siglas de "Fully Qualified Domain Name" o "Nombre de Dominio Completo". Es un nombre de dominio que especifica su ubicación exacta en la jerarquía del DNS. Un FQDN incluye el nombre de host y 
-todos los niveles de dominio en la jerarquía, desde el dominio de nivel más alto hasta el subdominio más específico.
+3- Configura el acceso mediante usuario anónimo
 
-**3- ¿Qué son los root servers? , ¿Cuántos root servers hay?, ¿Cuántos servidores raíz físicos existen y dónde se encuentran?, ¿Qué es anycast?**
+4- Permite que el usuario anónimo pueda escribir si accede desde la red 10.6.0.x
 
-Los root servers son servidores DNS que forman la base de la jerarquía del sistema de nombres de dominio. Hay 13 conjuntos de servidores raíz distribuidos en todo el mundo. Estos servidores no almacenan información sobre dominios específicos sino que responden a las consultas de DNS proporcionando información sobre los servidores de nivel superior.
+### Instalación de servicios:
 
-Anycast:
-Anycast es una técnica de enrutamiento en la que una dirección IP se asigna a varios servidores distribuidos geográficamente. Cuando se realiza una consulta a una dirección Anycast, la red dirigirá la solicitud al servidor más cercano en términos de topología de red.
+Primero antes que nada, tendremos que instalar los servicios:
 
-**4- ¿Qué es un archivo de zona (zone file)? Indica para qué sirven los registros de un archivo de zona. Pon un ejemplo de un archivo de zona e interpreta la información almacenada**
+**ProFtpd**
 
-Un archivo de zona es un archivo de texto que almacena información sobre la asociación entre nombres de dominio y direcciones IP en un servidor DNS. Contiene registros DNS que definen diversas propiedades de un dominio.
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/8ee99d42-e10c-430a-9162-642f4574c7f8)
+
+Verificamos que proftpd está en ejecución:
+
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/d28c775d-f116-42db-ae2f-ca8d6fdc527e)
+
+
+**BIND9:**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/405a8bbc-a871-4ed4-911a-eb0288a414c5)
+
+### Configurar archivo Proftpd:
+
+**sudo nano /etc/proftpd/proftpd.conf**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4dc74ce3-0e37-4e77-9d64-9441af23a3cb)
+
+Lo editaremos de la siguiente forma según dicta el ejercicio:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/766b8028-56ff-4acb-a656-c968229f7f5c)
+
+
+
+
+
+
+
+
+
