@@ -149,9 +149,8 @@ Si comprobamos toda la configuración, nos aparecerá el certificado creado ante
 
 **POSTFIX, IMAP Y POP3:**
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/da334e76-c194-4a49-a24b-cc6e3bb61ca9)
 
-Terminaremos de configurarlo seleccionando en la panatalla 
+Terminaremos de configurarlo seleccionando en la pantalla 
 
 
 ## Paso 2: Creacion del script
