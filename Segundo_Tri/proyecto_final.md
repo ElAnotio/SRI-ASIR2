@@ -149,8 +149,21 @@ Si comprobamos toda la configuración, nos aparecerá el certificado creado ante
 
 **POSTFIX, IMAP Y POP3:**
 
+Primero, instalaremos POSTFIX y procedemos a su configuracion:
 
-Terminaremos de configurarlo seleccionando en la pantalla 
+```
+sudo apt-get install postfix
+```
+
+Haremos click en sitio de internet:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/46502096-d6a5-4416-8905-32f5fd0cb2bc)
+
+Luego configuraremos el sitio mail:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/e9b50da4-300e-4245-b9fd-33d5f7f83ccb)
+
+
 
 
 ## Paso 2: Creacion del script
