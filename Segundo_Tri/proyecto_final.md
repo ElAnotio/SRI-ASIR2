@@ -72,9 +72,31 @@ A continuación, instalaremos los siguientes servicios:
 
 **BIND9:**
 
+Primero, instalaremos el servicio BIND9:
+
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3826ac43-7603-4ab5-af3f-50a46d2b49f5)
 
-**VSFTPD**:
+Ahora, editaremos el archivo de opciones de bind:
+
+```
+sudo nano /etc/bind/named.conf.options
+```
+
+Ahora pondremos la direccion que va a utilizar nuestro dominio marisma.local
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c93cefae-7fcc-4745-9c7b-8e77822e3b67)
+
+Ahora crearemos la zona directa y la zona inversa de nuestro dominio:
+
+```
+sudo nano /etc/bind/named.conf.local
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/bd3e4fc2-e053-4a17-95c4-6fb66dc83d7f)
+
+
+
+**PROFTPD**:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0884909d-c075-4daf-a4c3-43b188181f5a)
 
@@ -93,6 +115,11 @@ Después nos iremos a modules.conf y desmarcaremos las siguientes lineas:
 ```
 sudo nano /etc/proftpd/modules.conf
 ```
+
+Ahora, utilizaremos el siguiente comando para comprobar que la sixtaxis funciona correctamente:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/911b26be-1b0c-4abd-8b32-5a482e7a7d78)
+
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3f2dcb20-2651-4e18-9ca7-49dfd655c2fb)
 
