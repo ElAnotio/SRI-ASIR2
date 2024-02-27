@@ -94,7 +94,35 @@ sudo nano /etc/bind/named.conf.local
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/bd3e4fc2-e053-4a17-95c4-6fb66dc83d7f)
 
+Ahora, utilizaremos el siguiente comando para comprobar que la sixtaxis funciona correctamente:
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/911b26be-1b0c-4abd-8b32-5a482e7a7d78)
+
+Ahora, crearemos una carpeta para las zonas y crearemos el archivo copiando el db.local
+
+```
+sudo cp /etc/bind/db.local /etc/bind/zones/db.marisma.local
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/5c564575-b41d-4ec2-917f-f4045490b603)
+
+Haremos lo mismo con la zona indirecta y quedará la carpeta de esta manera:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a3cdc5be-a673-4eb1-8958-0e85dec6bc51)
+
+El archivo de configuracion de la zona directa pondremos lo siguiente:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/010e8c11-9232-4273-82f2-f93e5f461558)
+
+Y en la inversa:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/f5499f42-e948-479a-8966-93c36d383e16)
+
+Una vez hecho todo, restableceremos bind9 para que se apliquen los cambios:
+
+```
+sudo systemctl restart bind9
+```
 
 **PROFTPD**:
 
@@ -115,11 +143,6 @@ Después nos iremos a modules.conf y desmarcaremos las siguientes lineas:
 ```
 sudo nano /etc/proftpd/modules.conf
 ```
-
-Ahora, utilizaremos el siguiente comando para comprobar que la sixtaxis funciona correctamente:
-
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/911b26be-1b0c-4abd-8b32-5a482e7a7d78)
-
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3f2dcb20-2651-4e18-9ca7-49dfd655c2fb)
 
