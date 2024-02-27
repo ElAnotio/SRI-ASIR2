@@ -302,7 +302,7 @@ sudo restart bind9
 
 ### Crear base de datos y usuario MySQL
 sudo mysql -e "CREATE DATABASE $base_datos;"
-sudo mysql -e "CREATE USER '$usuario_mysql'@'localhost' IDENTIFIED BY 'password';"
+sudo mysql -e "CREATE USER '$usuario_mysql'@'localhost' IDENTIFIED BY '$sitio_web';"
 sudo mysql -e "GRANT ALL PRIVILEGES ON $base_datos.* TO '$usuario_mysql'@'localhost';"
 sudo mysql -e "FLUSH PRIVILEGES;"
 
