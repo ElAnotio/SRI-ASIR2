@@ -213,6 +213,39 @@ Luego configuraremos el sitio mail:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/e9b50da4-300e-4245-b9fd-33d5f7f83ccb)
 
+Esperaremos a que termina de instalar y ya lo tendremos configurado.
+
+Comprobaremos que funciona utilizando 
+
+```
+sudo systemctl status postfix
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/f871a942-c1f2-4496-858b-7cbfbf94b2fd)
+
+Para instalar IMAP Y POP3 utilizaremos:
+
+```
+sudo apt install dovecot-imapd dovecot-pop3d
+```
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/31dba36b-b396-4047-bdec-7ea23de81b57)
+
+Reiniciaremos dovecot por si acaso:
+
+```
+sudo systemctl restart dovecot
+```
+Ahora editaremos el archivo dovecot.conf
+
+```
+nano /etc/dovecot/dovecot.conf
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/6e2e4e49-c43f-47d8-868a-16e784dcf059)
+
+Añadiremos la siguiente linea:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/ea0b1758-e1ab-4074-9eb9-c7986b17fd7b)
 
 
 
@@ -293,9 +326,5 @@ sudo systemctl restart apache2
 
 echo "Script completado."
 ```
-
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/fb7e0074-fb9d-4667-bf8b-559ae72b4dd3)
-
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0306224d-4394-42ec-8eb1-8049d9090c63)
 
 
