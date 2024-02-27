@@ -357,5 +357,12 @@ Zona Inversa:
 
 Si usamos el comando dig, nos tiene que resolver la ip puesta anteriormente:
 
+Zona directa:
+
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/7e0b4a10-1385-4c5d-b14a-8085e2a87d3c)
+
+Zona inversa:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3cc81edb-142c-4af0-bdca-a340cbfad6ca)
+
 
