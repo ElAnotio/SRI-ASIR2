@@ -345,4 +345,7 @@ Zona Inversa:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/cac28068-0163-4053-9cb8-4245e59f979e)
 
+Si usamos el comando dig, nos tiene que resolver la ip puesta anteriormente:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/7e0b4a10-1385-4c5d-b14a-8085e2a87d3c)
 
