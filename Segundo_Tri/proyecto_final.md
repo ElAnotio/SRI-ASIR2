@@ -245,9 +245,18 @@ nano /etc/dovecot/dovecot.conf
 
 Añadiremos la siguiente linea:
 
-![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/ea0b1758-e1ab-4074-9eb9-c7986b17fd7b)
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/2912fbde-b9d2-4e27-ad0b-1c407cb23289)
 
+**COMO HABILITAR ARCHIVOS PYTHON**
 
+Utilizaremos los siguientes comandos para poder instalar python:
+
+```
+sudo apt install libapache2-mod-wsgi-py3
+sudo a2enmod wsgi
+sudo systemctl restart apache2
+```
+En el paso 3 haremos todas las comprobaciónes posibles...
 
 ## Paso 2: Creacion del script
 
@@ -258,15 +267,17 @@ Utilizaremos el siguiente contenido:
 #!/bin/bash
 
 # Datos requeridos
-sitio_web="ejemplo.com"
-usuario_ftp="ftp_user"
-usuario_ssh="ssh_user"
-subdominio="subdominio.ejemplo.com"
-base_datos="basedatos"
-usuario_mysql="mysql_user"
+sitio_web="$1"
+subdominio="$1"
+base_datos="$1"
+usuario_mysql="$1"
+read -p "Escribe la dirección ip que quieras poner:" dns_ip
+zonadirecta="/etc/bind/zones/db.marisma.local"
+zonainversa="/etc/bind/zones/db.192.168.201"
 
 # Crear usuario y directorio para alojamiento web
 sudo useradd -m -d /home/$sitio_web -s /bin/bash $sitio_web
+sudo passwd $sitio_Web
 sudo mkdir /var/www/$sitio_web
 sudo chown $sitio_web:$sitio_web /var/www/$sitio_web
 
@@ -278,40 +289,15 @@ sudo sed -i "s/<Directory \/var\/www\/>/Directory \/var\/www\/$sitio_web>/g" /et
 sudo a2ensite $sitio_web.conf
 sudo systemctl reload apache2
 
-# Crear usuario del sistema para FTP, SSH, etc.
-sudo useradd -m -s /bin/bash $usuario_ftp
-sudo usermod -aG www-data $usuario_ftp  # Agregar usuario FTP al grupo de Apache para tener acceso al directorio del sitio web
-sudo passwd $usuario_ftp  # Establecer la contraseña para el usuario FTP
-
-sudo useradd -m -s /bin/bash $usuario_ssh
-sudo passwd $usuario_ssh  # Establecer la contraseña para el usuario SSH
-
 # Crear subdominio en servidor DNS
-sudo bash -c "echo '127.0.0.1 $subdominio' >> /etc/hosts"
-sudo bash -c "echo 'zone \"$subdominio\" {
-  type master;
-  file \"$subdominio.zone\";
-};' >> /etc/bind/named.conf.local"
+#zona directa
+echo "\$ORIGIN ${sitio_web}.marisma.local." >> $zonadirecta
+echo "@  IN  A  ${dns_ip}" >> $zonadirecta
+echo "www  IN  A  ${dns_ip}" >> $zonadirecta
+#zona inversa
+echo "${dns_ip}  IN  PTR  ${sitio_web}.marisma.local." >> zonainversa
 
-sudo touch /var/lib/bind/$subdominio.zone
-sudo bash -c "echo '$subdominio. IN SOA ns.$subdominio. root.$subdominio. (
-  2024020201; Serial
-  3600; Refresh
-  1800; Retry
-  604800; Expire
-  86400 ); Minimum TTL
-$subdominio. IN NS ns.$subdominio.
-ns.$subdominio. IN A 127.0.0.1
-$subdominio. IN MX 10 mail.$subdominio.
-mail.$subdominio. IN A 127.0.0.1
-www.$subdominio. IN CNAME $subdominio.
-ftp.$subdominio. IN CNAME $subdominio.
-smtp.$subdominio. IN CNAME $subdominio.
-pop.$subdominio. IN CNAME $subdominio.
-imap.$subdominio. IN CNAME $subdominio.
-' >> /var/lib/bind/$subdominio.zone"
-
-sudo systemctl restart bind9
+sudo restart bind9
 
 ### Crear base de datos y usuario MySQL
 sudo mysql -e "CREATE DATABASE $base_datos;"
@@ -319,12 +305,44 @@ sudo mysql -e "CREATE USER '$usuario_mysql'@'localhost' IDENTIFIED BY 'password'
 sudo mysql -e "GRANT ALL PRIVILEGES ON $base_datos.* TO '$usuario_mysql'@'localhost';"
 sudo mysql -e "FLUSH PRIVILEGES;"
 
-### Habilitar la ejecución de aplicaciones Python con el servidor web
-sudo apt install libapache2-mod-wsgi-py3
-sudo a2enmod wsgi
-sudo systemctl restart apache2
 
-echo "Script completado."
+echo "Script finalizado."
 ```
+
+## Paso 3: Comprobación
+
+Si utilizamos el script, nos aparecerá algo como esto:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a1084556-754f-42ec-b14c-044e0649d514)
+
+Ahora, comprobaremos que funcionan y hacen las cosas correctamente:
+
+**Alojamiento web php y archivos python**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c75a441c-cc23-4872-a20e-a018c185049d)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/f2e89267-0a48-4059-9417-80371ab8ae52)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/133f475a-8f4b-4c17-a3b4-1726da9d8696)
+
+**mysql**
+
+Se mostrarán varios usuarios, pero deberá salir nuestro usuario creado:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0558b5cf-d2fc-4b52-b8f1-8558a79de800)
+
+**Conexión FTP por TLS**
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4c5c5051-e3c2-465d-8bae-602b3350b6dc)
+
+**SUBDOMINIO DNS**
+
+Zona directa:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/c2002309-d9d4-49f9-bcb3-86dc8e7ae145)
+
+Zona Inversa:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/cac28068-0163-4053-9cb8-4245e59f979e)
 
 
