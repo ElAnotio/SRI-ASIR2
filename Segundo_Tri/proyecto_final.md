@@ -332,6 +332,15 @@ Se mostrarán varios usuarios, pero deberá salir nuestro usuario creado:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/0558b5cf-d2fc-4b52-b8f1-8558a79de800)
 
+**PHPMYADMIN**
+
+Con el usuario podremos acceder a la pagina de phpmyadmin
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/686b3cae-44df-48de-aba9-73245c5c2485)
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/09aed653-ace2-40f2-814b-dae5ee9463d5)
+
+
 **Conexión FTP por TLS**
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/4c5c5051-e3c2-465d-8bae-602b3350b6dc)
