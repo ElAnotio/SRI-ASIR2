@@ -285,10 +285,11 @@ sudo echo "Usuario $sitio_web creado!"
 
 # Configurar host virtual en Apache
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/$sitio_web.conf
+sudo sed -i "s/ServerName.*/ServerName $sitio_web/g" /etc/apache2/sites-available/$sitio_web.conf
 sudo sed -i "s/ServerAdmin webmaster@localhost/ServerAdmin admin@$sitio_web/g" /etc/apache2/sites-available/$sitio_web.conf
 sudo sed -i "s/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\/$sitio_web/g" /etc/apache2/sites-available/$sitio_web.conf
 sudo sed -i "s/<Directory \/var\/www\/>/Directory \/var\/www\/$sitio_web>/g" /etc/apache2/sites-available/$sitio_web.conf
-sudo echo "${dns_ip} $sitio_web.marisma.local"
+sudo echo "${dns_ip} $sitio_web.marisma.local" >> etc/hosts
 sudo a2ensite $sitio_web.conf >> /dev/null
 sudo systemctl reload apache2
 sudo echo "Virtual Host y página creado con exito"
