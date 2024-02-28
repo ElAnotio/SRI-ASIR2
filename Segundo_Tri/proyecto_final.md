@@ -271,7 +271,7 @@ sitio_web="$1"
 subdominio="$1"
 base_datos="$1"
 usuario_mysql="$1"
-read -p "Escribe la dirección ip que quieras poner:" dns_ip
+dns_ip="$2"
 zonadirecta="/etc/bind/zones/db.marisma.local"
 zonainversa="/etc/bind/zones/db.192.168.201"
 
