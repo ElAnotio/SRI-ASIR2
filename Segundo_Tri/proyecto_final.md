@@ -281,6 +281,7 @@ sudo useradd -m -d /home/$sitio_web -s /bin/bash $sitio_web
 echo "$sitio_web:$contrasena" | sudo chpasswd
 sudo mkdir /var/www/$sitio_web
 sudo chown $sitio_web:$sitio_web /var/www/$sitio_web
+sudo echo "Usuario $sitio_web creado!"
 
 # Configurar host virtual en Apache
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/$sitio_web.conf
@@ -288,8 +289,9 @@ sudo sed -i "s/ServerAdmin webmaster@localhost/ServerAdmin admin@$sitio_web/g" /
 sudo sed -i "s/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\/$sitio_web/g" /etc/apache2/sites-available/$sitio_web.conf
 sudo sed -i "s/<Directory \/var\/www\/>/Directory \/var\/www\/$sitio_web>/g" /etc/apache2/sites-available/$sitio_web.conf
 sudo echo "${dns_ip} $sitio_web.marisma.local"
-sudo a2ensite $sitio_web.conf
+sudo a2ensite $sitio_web.conf >> /dev/null
 sudo systemctl reload apache2
+sudo echo "Virtual Host y página creado con exito"
 
 # Crear subdominio en servidor DNS
 #zona directa
@@ -298,15 +300,15 @@ echo "@  IN  A  ${dns_ip}" >> $zonadirecta
 echo "www  IN  A  ${dns_ip}" >> $zonadirecta
 #zona inversa
 echo "${dns_ip}  IN  PTR  ${sitio_web}.marisma.local." >> zonainversa
-
 sudo restart bind9
+sudo echo "Subdominio: $sitio_web.marisma.local creado con exito!"
 
 ### Crear base de datos y usuario MySQL
 sudo mysql -e "CREATE DATABASE $base_datos;"
 sudo mysql -e "CREATE USER '$usuario_mysql'@'localhost' IDENTIFIED BY '$sitio_web';"
 sudo mysql -e "GRANT ALL PRIVILEGES ON $base_datos.* TO '$usuario_mysql'@'localhost';"
 sudo mysql -e "FLUSH PRIVILEGES;"
-
+sudo echo "Usiario añadido a la base de datos correctamente"
 
 echo "Script finalizado."
 ```
