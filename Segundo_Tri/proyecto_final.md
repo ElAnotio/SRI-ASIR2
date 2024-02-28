@@ -271,13 +271,14 @@ sitio_web="$1"
 subdominio="$1"
 base_datos="$1"
 usuario_mysql="$1"
-dns_ip="$2"
+dns_ip="$3"
+contrasena="$2"
 zonadirecta="/etc/bind/zones/db.marisma.local"
 zonainversa="/etc/bind/zones/db.192.168.201"
 
 # Crear usuario y directorio para alojamiento web
 sudo useradd -m -d /home/$sitio_web -s /bin/bash $sitio_web
-sudo passwd $sitio_Web
+echo "$sitio_web:$contrasena" | sudo chpasswd
 sudo mkdir /var/www/$sitio_web
 sudo chown $sitio_web:$sitio_web /var/www/$sitio_web
 
