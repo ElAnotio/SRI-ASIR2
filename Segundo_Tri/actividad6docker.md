@@ -80,6 +80,8 @@ Comprobaremos que nos ha creado la imagen:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/adc97062-ac3d-4e04-a1d3-cc2632bf5886)
 
+Crearemos el contenedor de docker:
+
 ```
 docker run -d -p 80:80 --name ejemplo2 antonio/ejemplo2:v1
 ```
@@ -91,6 +93,42 @@ Y si todo ha salido correcto nos aparecerá:
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/a373e9c5-ceab-4ddc-bc53-4c8acd433462)
 
 ### Ejemplo 3: Construcción de imágenes con una una aplicación Python
+
+Vamos a tener el fichero Dockerfile y un directorio, llamado app con nuestra aplicación.
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/ff0b063e-cd46-4991-8649-a66e7298821c)
+
+Añadiremos el siguiente contenido al dockerfile:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/68460401-e25c-41b2-8d5f-9d9e40a74185)
+
+Para crear la imagen ejecutamos:
+
+```
+docker build -t antonio/ejemplo3:v1 .
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/3b123100-4ae5-4e0c-b90b-b527263b0417)
+
+Crearemos el contenedor de docker:
+
+```
+docker run -d -p 80:80 --name ejemplo3 antonio/ejemplo3:v1
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/15406efc-8844-4a29-aeba-b0da54cff0b8)
+
+Y si todo ha salido correcto nos aparecerá:
+
+
+
+
+
+
+
+
+
+
 
 
 
