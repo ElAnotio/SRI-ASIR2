@@ -72,4 +72,47 @@ Si todo lo hemos hecho correctamente nos deberá aparecer al poner nuestra ip:
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/9a8074f6-5860-4a46-b745-e2fc65b61588)
 
+### 3º Ejemplo: Despliegue de Wordpress + mariadb
+
+Para este ejemplo, crearemos otrra red:
+
+```
+docker network create red_wp
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/21ccd38e-066c-40e9-9073-2cd22dc1affc)
+
+Ahora crearemos los contenedores:
+
+```
+$ docker run -d --name servidor_mysql \
+                --network red_wp \
+                -v /opt/mysql_wp:/var/lib/mysql \
+                -e MYSQL_DATABASE=bd_wp \
+                -e MYSQL_USER=user_wp \
+                -e MYSQL_PASSWORD=asdasd \
+                -e MYSQL_ROOT_PASSWORD=asdasd \
+                mariadb
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/27fceff8-0d82-4475-9c8f-4dafb6ce3723)
+
+```
+$ docker run -d --name servidor_wp \
+                --network red_wp \
+                -v /opt/wordpress:/var/www/html/wp-content \
+                -e WORDPRESS_DB_HOST=servidor_mysql \
+                -e WORDPRESS_DB_USER=user_wp \
+                -e WORDPRESS_DB_PASSWORD=asdasd \
+                -e WORDPRESS_DB_NAME=bd_wp \
+                -p 80:80 \
+                wordpress
+
+```
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/520ed29a-ea0b-4ae9-85b0-adf8d3c7504d)
+
+Si todo ha salido correctamente, podremos acceder:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/17566029-e894-4f38-a4ed-c6e8ad69f28f)
 
