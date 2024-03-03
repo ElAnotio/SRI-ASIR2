@@ -27,3 +27,4 @@ Por ultimo, comprobaremos con un status que todo funciona:
 ```
 sudo systemctl status docker
 ```
+
