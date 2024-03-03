@@ -11,14 +11,14 @@
 
 **Parte 2:** 
 
-** 1- Edita el fichero Dockerfile**
+ **1- Edita el fichero Dockerfile**
 
-** 2- Construye el contenedor**
+ **2- Construye el contenedor**
 
-** 3- Ejecútalo**
+ **3- Ejecútalo**
 
-** 4- Create una cuenta en hub.docker.com**
+ **4- Create una cuenta en hub.docker.com**
 
-** 5- Publícalo**
+ **5- Publícalo**
 
 
