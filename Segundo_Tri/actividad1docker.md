@@ -28,3 +28,5 @@ Por ultimo, comprobaremos con un status que todo funciona:
 sudo systemctl status docker
 ```
 
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/bda65584-d15f-43f8-874c-5683675eacf3)
+
