@@ -118,7 +118,14 @@ docker run -d -p 80:80 --name ejemplo3 antonio/ejemplo3:v1
 
 ![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/15406efc-8844-4a29-aeba-b0da54cff0b8)
 
-Y si todo ha salido correcto nos aparecerá:
+Y si todo ha salido correcto nos aparecerá una de las ventanas anteriores...
+
+### Errores en la práctica:
+
+He encontrado una serie de errores a la hora de realiar esta práctica, exactamente en el último ejemplo, en el github, no dice que tiene que tener el txt de requirements, que es necesario para adjuntarla al dockerfile, lo que creo que es una de las posibles causas, a la hora de ejecutarlo, el contenedor te lo acepta, pero a la hora de comprobarlo, te da un error que no encuentra el archivo .py, tal que así:
+
+![image](https://github.com/ElAnotio/SRI-ASIR2/assets/122453991/58ef88a0-88f5-43ba-af3a-9cf23894bca0)
+
 
 
 
